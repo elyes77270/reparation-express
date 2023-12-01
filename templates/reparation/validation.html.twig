@@ -1,0 +1,25 @@
+{# templates/reparation/validation.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Validation Réparation{% endblock %}
+
+{% block body %}
+    {% include 'layout/nav.html.twig'%}
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 col-xxl-7 text-center mx-auto">
+                    <h2 class="fw-bold">Validation de la Réparation</h2>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                <div class="col-md-12">
+                    <p>Un résumé de la réparation a été envoyé à l'adresse email: {{ email }}</p>
+                    <a href="{{ path('app_download_pdf', {'idSoumission': idSoumission}) }}" class="btn btn-primary" target="_blank">Télécharger le PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'layout/footer.html.twig'%}
+{% endblock %}

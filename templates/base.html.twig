@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="twitter:description" content="Réparation Express, votre spécialiste de la réparation de téléphone. Nous proposons un service rapide et de qualité pour redonner vie à votre smartphone en panne. Nos techniciens expérimentés travaillent avec des pièces d'origine pour garantir une réparation fiable et durable.">
+        <meta name="twitter:title" content="Réparation Express">
+        <meta name="twitter:image" content="assets/img/tAsset-3.svg">
+        <meta name="description" content="Réparation Express, votre spécialiste de la réparation de téléphone. Nous proposons un service rapide et de qualité pour redonner vie à votre smartphone en panne. Nos techniciens expérimentés travaillent avec des pièces d'origine pour garantir une réparation fiable et durable.">
+        <meta property="og:image" content="assets/img/tAsset-3.svg">
+        <meta property="og:title" content="Réparation Express">
+        <meta property="og:description" content="Réparation Express, votre spécialiste de la réparation de téléphone. Nous proposons un service rapide et de qualité pour redonner vie à votre smartphone en panne. Nos techniciens expérimentés travaillent avec des pièces d'origine pour garantir une réparation fiable et durable.">
+        <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/favicon/favicon-16x16.png"') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/favicon/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="180x180" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/favicon/android-chrome-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('assets/img/favicon/android-chrome-512x512.png') }}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+        <title>{% block title %}Réparation Express{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap') }}">
+            <link rel="stylesheet" href="{{ asset('assets/fonts/font-awesome.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/aos.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/Contact-Details-icons.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/Hero-Carousel-images.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/js/aos.min.js') }}"></script>
+            <script src="{{ asset('assets/js/bs-init.js') }}"></script>
+            <script src="{{ asset('assets/js/bold-and-bright.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

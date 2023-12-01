@@ -1,0 +1,17 @@
+.fit-cover {
+  object-fit: cover;
+}
+
+device-font {
+}
+
+.device-font {
+  font-size: larger;
+}
+
+.phone-image {
+  max-height: 275px;
+  object-fit: contain;
+  width: 100%;
+}
+

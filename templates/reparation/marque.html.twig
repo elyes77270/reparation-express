@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réparation Express - {{ marque.nom }}{% endblock %}
+
+{% block body %}
+    {% include 'layout/nav.html.twig'%}
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Réparation de smartphones - {{ marque.nom }}</h2>
+                    <p class="text-muted">2- Choisir le modèle de smartphone {{ marque.nom }}</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Rechercher un modèle...">
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
+                {% for telephone in telephones %}
+                    <div class="col-xxl-4 mb-4 text-center" data-name="{{ telephone.nom }}">
+                        <div>
+                            <a href="{{ path('app_marque_telephone', {'marque': marque.nom, 'telephone': telephone.nom}) }}">
+                                <img class="rounded img-fluid shadow phone-image fit-cover" src="{{ asset('uploads/images/' ~ telephone.image) }}" style="height: 100%;" alt="{{  telephone.nom  }}">
+                            </a>
+                        </div>
+                        <div class="py-4 text-center">
+                            <h4 class="fw-bold">{{ telephone.nom }}</h4>
+                            <a class="btn btn-primary" role="button" href="{{ path('app_marque_telephone', {'marque': marque.nom, 'telephone': telephone.nom}) }}">Choisir</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% include 'layout/footer.html.twig'%}
+    <!-- Script de filtrage dynamique -->
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function (event) {
+            const searchTerm = event.target.value.toLowerCase();
+            const phones = document.querySelectorAll('[data-name]');
+
+            phones.forEach(function (phone) {
+                const phoneName = phone.getAttribute('data-name').toLowerCase();
+
+                console.log(searchTerm, phoneName)
+                if (phoneName.includes(searchTerm)) {
+                    phone.style.display = 'block';
+                    console.log(true)
+                } else {
+                    phone.style.display = 'none';
+                }
+            });
+        });
+    </script>
+{% endblock %}
